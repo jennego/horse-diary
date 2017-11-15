@@ -1,0 +1,2 @@
+class HorseProfile < ApplicationRecord
+end

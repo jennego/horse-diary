@@ -1,0 +1,8 @@
+<h1>Add a New Session</h1>
+
+<%= simple_form_for @post do |f| %>
+<%= f.input :title %>
+<%= f.input :body %>
+<%= f.submit "Add Session", class: "btn btn-primary" %>
+
+<% end %>
