@@ -1,0 +1,15 @@
+<h3> <%= @post.date %> </h3>
+<h3>  <%= @post.title %> </h3>
+
+<%= link_to horse_path(@post.horse) do %>
+<%= @post.horse.name %> <br>
+  <% end %>
+
+Type: <%= @post.category.name %> <br>
+ <%= @post.body %>
+
+<div>
+<%= link_to 'edit', edit_post_path, class:"btn btn-warning" %>
+<%= link_to 'delete', post_path, class:"btn btn-danger" %>
+
+</div>

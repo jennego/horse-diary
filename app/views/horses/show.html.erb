@@ -1,0 +1,13 @@
+<h2> <%= @horse.name %> </h2>
+<p><%= @horse.breed %> </p>
+<p><%= @horse.age %> </p>
+<p> <%=Date.today.year - @horse.approx_age%>  </p>
+<%= @horse.approx_age%> 
+
+
+
+
+<%= link_to 'edit', edit_horse_path %>
+<%= link_to 'delete', horse_path %>
+
+Archive this horse

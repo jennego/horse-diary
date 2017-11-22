@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get('/about', { to: 'welcome#about', as: :about })
   resources :posts
-
+  resources :horses
+  resources :users
   root 'welcome#index'
-  
+
 end

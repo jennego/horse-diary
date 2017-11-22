@@ -1,0 +1,10 @@
+<%= simple_form_for @post do |f| %>
+<%= f.input :date %>
+
+<%= f.input :title %>
+<%= f.association :category, label: "Session Type" %>
+<%= f.association :horse, label: "Horse" %>
+<%= f.input :body %>
+<%= f.submit "Add Session", class: "btn btn-primary" %>
+
+<% end %>

@@ -1,0 +1,13 @@
+<%= simple_form_for @horse do |t| %>
+<%= t.input :name %>
+<%= t.input :full_name %>
+<%= t.input :show_name %>
+<%= t.input :reg_name %>
+<%= t.input :approx_age, :as => :date,
+        :start_year => 1970, :end_year => 2050,
+        :order => [:year] %>
+<%= t.input :age %>
+<%= t.input :breed %>
+<%= t.input :height %>
+<%= t.submit :submit, class: "btn btn-primary" %>
+<% end %>

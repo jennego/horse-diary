@@ -1,0 +1,11 @@
+Filter by: 
+
+<% @posts.each do |post| %>
+  <div>
+<%= link_to post_path(post) do %>
+  <strong> <%= post.title %>   <%= post.date %> </strong> <br>
+  <% end %>
+  Horse: <%= post.horse.name %> <br>
+  Type: <%= post.category.name %>
+</div>
+<% end %>
