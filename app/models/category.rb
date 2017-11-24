@@ -1,3 +1,5 @@
 class Category < ApplicationRecord
-  has_many :posts
+  has_many :multicategories, dependent: :destroy
+  has_many :posts, through: :multicategories
+
 end

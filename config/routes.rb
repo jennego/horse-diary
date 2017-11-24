@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :horses
   resources :users
+  resource :session, only:[:new]
   root 'welcome#index'
 
 end

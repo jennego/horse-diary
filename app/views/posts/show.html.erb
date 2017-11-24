@@ -5,7 +5,12 @@
 <%= @post.horse.name %> <br>
   <% end %>
 
-Type: <%= @post.category.name %> <br>
+Type:
+<% @post.categories.each do |c| %>
+<div class="btn btn-dark" style="background-color: <%=c.color%>"> <%= c.name %> </div>
+<% end %>
+
+<br>
  <%= @post.body %>
 
 <div>

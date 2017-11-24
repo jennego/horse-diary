@@ -31,6 +31,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'carrierwave'
+gem "select2-rails"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

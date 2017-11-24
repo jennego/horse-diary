@@ -6,9 +6,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
- if  @post.save
-   redirect_to posts_path
- end
+   if  @post.save
+     redirect_to posts_path
+   end
   end
 
   def index
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :date, :category_id, :horse_id)
+    params.require(:post).permit(:title, :body, :date, :horse_id, {category_ids:[]})
   end
 
   def find_post

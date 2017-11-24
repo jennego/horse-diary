@@ -2,9 +2,17 @@
 <%= f.input :date %>
 
 <%= f.input :title %>
-<%= f.association :category, label: "Session Type" %>
-<%= f.association :horse, label: "Horse" %>
+<%= f.association :categories, input_html: {class: "js-example-basic-multiple"} %>
+<%= f.association :horse, label: "Horse", input_html: {class:'dropdown'} %>
 <%= f.input :body %>
 <%= f.submit "Add Session", class: "btn btn-primary" %>
 
 <% end %>
+
+<script>
+$(document).ready(function() {
+  $('.js-example-basic-multiple').select2();
+  $('.dropdown').select2();
+
+});
+</script>

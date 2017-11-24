@@ -11,7 +11,15 @@
 // about supported directives.
 //
 //= require jquery3
+//= require select2
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $( "#dropdown" ).select2({
+    theme: "bootstrap"
+  });
+});

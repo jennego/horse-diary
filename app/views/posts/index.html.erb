@@ -1,4 +1,4 @@
-Filter by: 
+Filter by: [select]
 
 <% @posts.each do |post| %>
   <div>
@@ -6,6 +6,6 @@ Filter by:
   <strong> <%= post.title %>   <%= post.date %> </strong> <br>
   <% end %>
   Horse: <%= post.horse.name %> <br>
-  Type: <%= post.category.name %>
+  Type: <%= post.categories %>
 </div>
 <% end %>
