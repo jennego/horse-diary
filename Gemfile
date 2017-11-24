@@ -31,6 +31,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'mini_magick'
 gem "select2-rails"
 
 

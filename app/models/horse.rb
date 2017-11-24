@@ -5,4 +5,6 @@ class Horse < ApplicationRecord
   has_many :too_many_horses, dependent: :nullify
   has_one :horse_profile
 
+  mount_uploader :avatar_url, AvatarUploader
+  
 end

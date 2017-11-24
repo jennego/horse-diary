@@ -1,12 +1,16 @@
+<div class="row">
+
+<div class="col-md-2">
+<%= image_tag @horse.avatar_url.url(:small) %>
+</div>
+
+<div class="col-md">
 <h2> <%= @horse.name %> </h2>
 <p><%= @horse.breed %> </p>
 <p><%= @horse.age %> </p>
-<p> <%=Date.today.year - @horse.approx_age%>  </p>
-<%= @horse.approx_age%> 
+</div>
 
-
-
-
+</div>
 <%= link_to 'edit', edit_horse_path %>
 <%= link_to 'delete', horse_path %>
 
