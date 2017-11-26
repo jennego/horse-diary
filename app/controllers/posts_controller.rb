@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     render 'posts/new'
+
+    @horses = Horse.all 
   end
 
   def create

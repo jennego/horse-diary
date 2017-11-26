@@ -9,10 +9,29 @@
 
 <% end %>
 
+
 <script>
 $(document).ready(function() {
   $('.js-example-basic-multiple').select2();
   $('.dropdown').select2();
+
+  function formatHorse (horse) {
+    if (!horse.id) {
+      return horse.text;
+    }
+
+    console.log(horse);
+
+    let $horse= $(
+    `<span><img src="/uploads/horse/avatar_url/${horse.id}/thumb_horseavatar.jpg"/> ` +  horse.text  + `</span>`
+   );
+
+    return $horse;
+  };
+
+  $(".dropdown").select2({
+    templateResult: formatHorse
+  });
 
 });
 </script>
