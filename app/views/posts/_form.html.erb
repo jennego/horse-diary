@@ -2,7 +2,7 @@
 <%= f.input :date %>
 
 <%= f.input :title %>
-<%= f.association :categories, input_html: {class: "js-example-basic-multiple"} %>
+<%= f.association :categories, input_html: {class: "multiple"} %>
 <%= f.association :horse, label: "Horse", input_html: {class:'dropdown'} %>
 <%= f.input :body %>
 <%= f.submit "Add Session", class: "btn btn-primary" %>
@@ -12,8 +12,7 @@
 
 <script>
 $(document).ready(function() {
-  $('.js-example-basic-multiple').select2();
-  $('.dropdown').select2();
+  $('.multiple').select2();
 
   function formatHorse (horse) {
     if (!horse.id) {
