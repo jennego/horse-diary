@@ -14,6 +14,9 @@
 //= require select2
 //= require popper
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
 //= require rails-ujs
 //= require_tree .
 

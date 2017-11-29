@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    @horses = Horse.all.to_json
+    puts @horses
     render 'posts/new'
 
-    @horses = Horse.all 
   end
 
   def create
@@ -14,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
+
   end
 
   def show

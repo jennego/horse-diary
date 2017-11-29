@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
+
   def index
-    render 'welcome/index'
+    @posts = Post.all
   end
 
   def about

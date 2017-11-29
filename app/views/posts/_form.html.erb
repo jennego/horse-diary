@@ -1,17 +1,25 @@
 <%= simple_form_for @post do |f| %>
-<%= f.input :date %>
+<%= f.input :date, input_html: {class:'datepicker'} %>
 
 <%= f.input :title %>
 <%= f.association :categories, input_html: {class: "multiple"} %>
 <%= f.association :horse, label: "Horse", input_html: {class:'dropdown'} %>
 <%= f.input :body %>
 <%= f.submit "Add Session", class: "btn btn-primary" %>
+<input type="text" data-provide='datepicker' >
 
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+
+</script>
 
 
 <script>
 $(document).ready(function() {
+  $('.datepicker').datepicker();
   $('.multiple').select2();
 
   function formatHorse (horse) {
@@ -31,6 +39,5 @@ $(document).ready(function() {
   $(".dropdown").select2({
     templateResult: formatHorse
   });
-
 });
 </script>

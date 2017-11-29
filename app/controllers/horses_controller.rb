@@ -1,4 +1,5 @@
 class HorsesController < ApplicationController
+
     def new
       @horse = Horse.new
       render 'horses/new'

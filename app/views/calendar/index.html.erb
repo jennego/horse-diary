@@ -1,0 +1,11 @@
+<%= month_calendar events: @posts do |date, posts| %>
+  <%= date.day %>
+
+  <% posts.each do |post| %>
+    <div>
+      <%= post.horse.name %> <br>
+   <%= post.categories.map(&:name).join(',') %>
+
+    </div>
+  <% end %>
+<% end %>

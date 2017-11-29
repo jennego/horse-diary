@@ -1,11 +1,18 @@
 Filter by: [select]
 
+
+
 <% @posts.each do |post| %>
-  <div>
+  <div style="border:2px black solid; margin-bottom:20px;">
 <%= link_to post_path(post) do %>
   <strong> <%= post.title %>   <%= post.date %> </strong> <br>
   <% end %>
-  Horse: <%= post.horse.name %> <br>
-  Type: <%= post.categories %>
+  Horse:
+  <%= image_tag post.horse.avatar_url.url(:thumb)  if post.horse.avatar_url.present?%>
+  <%= post.horse.name %> <br>
+
+      <% post.categories.each do |c| %>
+      <div class="btn btn-dark" style="background-color: <%=c.color%>"> <%= c.name %> </div>
+      <% end %>
 </div>
 <% end %>
