@@ -12,18 +12,21 @@ Min  <%= @weather["main"]["temp_min"] %> °C <br>
 </div>
 
 
-  <% def start_time
-     @wf['list'][0]["dt"]
-  end %>
+ <% i = 0 %>
+<%= calendar number_of_days: 5 do |date| %>
+ Day:<%= date.day %>
 
-<%= calendar number_of_days: 7 do |date| %>
-  <%= date.day %>
-  <% @wf['list'][0].each do %>
-  <%end %>
+Count: <%= i %>
+ <%=  @forecast['list'][i]['dt_txt']%>
+ <% i += 1%>
+ <%= DateTime.now %>
+ <%=  @forecast['list'] %>
+
+  arggghhhhh!!!!!!
 <% end %>
 
 
-<%= @wf['list'][0]["dt"] %>
+
 
 
 

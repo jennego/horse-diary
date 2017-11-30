@@ -13,7 +13,7 @@ Type:
 <% end %>
 
 <br>
- <%= @post.body %>
+ <%=raw @post.body %>
 
 <div>
 <%= link_to 'edit', edit_post_path, class:"btn btn-warning" %>
