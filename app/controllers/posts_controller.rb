@@ -25,10 +25,12 @@ class PostsController < ApplicationController
 
 
   def edit
+      find_post
   end
 
   def update
-    if @post.update question_params
+    find_post
+    if @post.update post_params
       redirect_to post_path(@post)
     else
       render :edit

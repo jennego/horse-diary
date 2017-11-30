@@ -37,6 +37,7 @@ gem 'devise'
 gem 'momentjs-rails'
 gem 'bootstrap-datepicker-rails'
 gem "simple_calendar"
+gem 'open-weather'
 
 
 

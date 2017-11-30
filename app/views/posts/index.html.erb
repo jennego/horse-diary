@@ -5,7 +5,7 @@ Filter by: [select]
 <% @posts.each do |post| %>
   <div style="border:2px black solid; margin-bottom:20px;">
 <%= link_to post_path(post) do %>
-  <strong> <%= post.title %>   <%= post.date %> </strong> <br>
+  <strong> <%= post.title %> -  <%= post.date.strftime('%B %d, %Y') if post.date.present? %> </strong> <br>
   <% end %>
   Horse:
   <%= image_tag post.horse.avatar_url.url(:thumb)  if post.horse.avatar_url.present?%>

@@ -1,8 +1,30 @@
 <h1>Welcome!</h1>
 
+<h2>Current Weather for <%= @weather["name"] %> </h2>
+<div class="current-weather">
+  <%= @weather["weather"][0]["main"] %><br>
+<%= @weather["main"]["temp"] %> °C <br>
+ <img src="<%='http://openweathermap.org/img/w/' + @weather["weather"][0]["icon"] + '.png' %>" /> <br>
+<%= @weather["weather"][0]["description"] %> <br>
+Max <%= @weather["main"]["temp_max"] %> °C <br>
+Min  <%= @weather["main"]["temp_min"] %> °C <br>
+
+</div>
+
+
+  <% def start_time
+     @wf['list'][0]["dt"]
+  end %>
+
 <%= calendar number_of_days: 7 do |date| %>
-  <%= date %>
+  <%= date.day %>
+  <% @wf['list'][0].each do %>
+  <%end %>
 <% end %>
+
+
+<%= @wf['list'][0]["dt"] %>
+
 
 
 
