@@ -55,6 +55,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    cocoon (1.2.11)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -76,10 +77,17 @@ GEM
     execjs (2.7.0)
     faker (1.8.4)
       i18n (~> 0.5)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
+    forecast_io (2.0.1)
+      faraday
+      hashie
+      multi_json
     geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashie (3.5.6)
     hirb (0.7.3)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
@@ -111,6 +119,7 @@ GEM
     momentjs-rails (2.17.1)
       railties (>= 3.1)
     multi_json (1.12.2)
+    multipart-post (2.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -235,9 +244,11 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   byebug
   carrierwave
+  cocoon
   coffee-rails (~> 4.2)
   devise
   faker
+  forecast_io
   geocoder
   hirb
   jbuilder (~> 2.5)

@@ -17,6 +17,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require moment
+//= require cocoon
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
 //= require rails-ujs

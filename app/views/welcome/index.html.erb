@@ -17,12 +17,13 @@ Min  <%= @weather["main"]["temp_min"] %> °C <br>
  Day:<%= date.day %>
 
 Count: <%= i %>
- <%=  @forecast['list'][i]['dt_txt']%>
- <% i += 1%>
- <%= DateTime.now %>
- <%=  @forecast['list'] %>
+<% date = DateTime.strptime(@darksky["daily"]["data"][i]["time"].to_s, '%s') %>
+<%= date.strftime('%B %d, %Y') %>
+<%= @darksky["daily"]["data"][i]["summary"] %>
+<%= @darksky["daily"]["data"][i]["icon"] %>
 
-  arggghhhhh!!!!!!
+ <% i += 1%>
+
 <% end %>
 
 

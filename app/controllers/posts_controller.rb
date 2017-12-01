@@ -2,13 +2,15 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @horses = Horse.all.to_json
-    puts @horses
+    2.times {@post.post_images.build}
     render 'posts/new'
+
 
   end
 
   def create
     @post = Post.new post_params
+
    if  @post.save
      redirect_to posts_path
    end
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :date, :horse_id, {category_ids:[]})
+    params.require(:post).permit(:title, :body, :date, :horse_id, {category_ids:[]}, post_image_attributes: [:image_url, :id, :_destroy])
   end
 
   def find_post

@@ -14,6 +14,9 @@ Type:
 
 <br>
  <%=raw @post.body %>
+ <%= @post.post_images do |img| %>
+ <%= img.image_url %>
+ <% end %>
 
 <div>
 <%= link_to 'edit', edit_post_path, class:"btn btn-warning" %>

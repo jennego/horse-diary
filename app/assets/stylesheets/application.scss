@@ -35,7 +35,6 @@ h2.horse-heading {
   margin: grey 2px solid;
 }
 
-.trix-editor {
-  overflow-y: auto;
- min-height: 250px;
+.trix-editor, .trix-content {
+min-height: 220px !important;
 }

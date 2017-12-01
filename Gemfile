@@ -40,6 +40,9 @@ gem "simple_calendar"
 gem 'open-weather'
 gem 'geocoder'
 gem 'trix'
+gem "cocoon"
+gem 'forecast_io'
+
 
 
 

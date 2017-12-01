@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129194928) do
+ActiveRecord::Schema.define(version: 20171201004854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20171129194928) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_multicategories_on_category_id"
     t.index ["post_id"], name: "index_multicategories_on_post_id"
+  end
+
+  create_table "post_images", force: :cascade do |t|
+    t.string "image_url"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_images_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(version: 20171129194928) do
   add_foreign_key "logs", "users"
   add_foreign_key "multicategories", "categories"
   add_foreign_key "multicategories", "posts"
+  add_foreign_key "post_images", "posts"
   add_foreign_key "posts", "horses"
   add_foreign_key "posts", "users"
   add_foreign_key "too_many_horses", "horses"
