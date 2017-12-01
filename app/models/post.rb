@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :categories, through: :multicategories
     has_many :post_images, dependent: :destroy
     accepts_nested_attributes_for :post_images, allow_destroy: true
+
   # belongs_to :user
 
 def start_time

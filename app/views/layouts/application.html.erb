@@ -42,8 +42,12 @@
   </div>
 </nav>
     <div class="container-fluid">
-        <div class="notice"><%= notice %></div>
-       <div class="alert"><%= alert %></div>
+    <% if flash[:notice].present? || flash[:alert].present? %>
+    <div class="flash-message alert-warning">
+    <p>  <%=flash[:notice] || flash[:alert] %>  </p>
+    </div>
+    <% end %>
+
       <%= yield %>
       </div>
   </body>
