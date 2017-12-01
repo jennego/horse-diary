@@ -1,27 +1,47 @@
 <h1>Welcome!</h1>
 
-<h2>Current Weather for <%= @weather["name"] %> </h2>
-<div class="current-weather">
-  <%= @weather["weather"][0]["main"] %><br>
-<%= @weather["main"]["temp"] %> °C <br>
- <img src="<%='http://openweathermap.org/img/w/' + @weather["weather"][0]["icon"] + '.png' %>" /> <br>
-<%= @weather["weather"][0]["description"] %> <br>
-Max <%= @weather["main"]["temp_max"] %> °C <br>
-Min  <%= @weather["main"]["temp_min"] %> °C <br>
 
+
+<h2>Current Weather </h2>
+<div class="current-weather">
+
+  <%=@darksky['currently']["summary"] %>
+  <div>
+    <canvas id="icon" width="128" height="128"></canvas>
+  <% icon = @darksky['currently']["icon"] %>
+</div>
+  <%=@darksky['currently']["temperature"] %> °C <br>
+  Chance of Precip: <%=@darksky['currently']["precipProbability"] %>
+
+
+  <script>
+  var skycons = new Skycons({"color": "purple"})
+  skycons.add("icon", "<%=icon%>");
+  skycons.play();
+</script>
 </div>
 
 
  <% i = 0 %>
 <%= calendar number_of_days: 5 do |date| %>
- Day:<%= date.day %>
 
-Count: <%= i %>
 <% date = DateTime.strptime(@darksky["daily"]["data"][i]["time"].to_s, '%s') %>
 <%= date.strftime('%B %d, %Y') %>
+<div class="forecast-icon">
+<% icon = 'icon_' + i.to_s %>
+<% icon_string = @darksky["daily"]["data"][i]["icon"] %>
+<canvas id="<%=icon%>"  width="60" height="60"></canvas>
+<script>
+  var skycons = new Skycons({"color": "purple"})
+  skycons.add("<%=icon%>", "<%=icon_string%>")
+    skycons.play();
+ </script>
+</div>
+<div style="max-width:200px">
+ High:  <%= @darksky["daily"]["data"][i]["temperatureHigh"] %>°C<br>
+Low: <%= @darksky["daily"]["data"][i]["temperatureLow"] %>°C <br>
 <%= @darksky["daily"]["data"][i]["summary"] %>
-<%= @darksky["daily"]["data"][i]["icon"] %>
-
+</div.
  <% i += 1%>
 
 <% end %>
