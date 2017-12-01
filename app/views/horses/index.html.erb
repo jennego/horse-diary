@@ -1,20 +1,21 @@
-<div class="row">
+<h1>Horses</h1>
+<div class="row d-flex">
 <% @horses.each do |horse| %>
 
-<div class="card col-md-4">
-  <div class="card-block">
-  <% if horse.avatar_url.present? %>
-  <%= image_tag horse.avatar_url.url(:small)%>
-  <% end %>
-
-    <%= link_to horse_path(horse) do %>
-            <h4 class="card-title">
-            <%= horse.name %>
-          </h4>
-            <% end %>
-    <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-  </div>
+<div class="col-md-4">
+  <div class="card" style="margin:10px">
+    <div class="row d-flex">
+  <div class="col-sm-5" style="background-image:url(<%= horse.avatar_url.url(:small)%>); height:200px; width:200px; background-size:cover" >
+ </div>
+ <div class="col-sm">
+   <div class="card-text">
+   <h2><%= horse.name %> </h2>
+ </div>
+ </div>
 </div>
+</div>
+</div>
+
 <% end %>
 
 </div>
