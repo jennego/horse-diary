@@ -2,11 +2,11 @@
 <% @horses.each do |horse| %>
 
 <div class="card col-md-4">
+  <div class="card-block">
   <% if horse.avatar_url.present? %>
-  <%= image_tag horse.avatar_url.url, class: "card-img-top"  %>
+  <%= image_tag horse.avatar_url.url(:small)%>
   <% end %>
 
-  <div class="card-block">
     <%= link_to horse_path(horse) do %>
             <h4 class="card-title">
             <%= horse.name %>

@@ -13,6 +13,7 @@
 
 //= require trix
 //= require jquery3
+//= require jquery.Jcrop
 //= require select2
 //= require popper
 //= require bootstrap-sprockets

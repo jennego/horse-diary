@@ -8,7 +8,13 @@ class HorsesController < ApplicationController
     def create
       @horse = Horse.new horse_params
       if @horse.save
-        redirect_to root_path
+       if params[:horse][:avatar_url].present?
+        render :crop
+      else
+        redirect_to horse_path(@horse)
+      end
+      else
+        render :new
       end
     end
 
@@ -23,7 +29,11 @@ class HorsesController < ApplicationController
     def update
       find_horse
       if @horse.update horse_params
+        if params[:horse][:avatar_url].present?
+          render :crop
+        else
         redirect_to horse_path(@horse)
+        end
       else
         render :edit
       end
