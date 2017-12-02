@@ -36,9 +36,9 @@ users = User.all
 
 horse_names = ['Dobbin', 'Star', 'Moonie', 'Sprit', 'Black Beauty', 'Flicka', 'Sonnet']
 fancy_horse_names = ['Dream Weaver', 'Full Fathom Five', 'Moneybags', 'Gambling Chance', 'Unfinished Bussiness']
-breeds = ['Fancy Pants Warmblood', 'Quarter Horse', 'Paint', 'Fjord', 'Thoroughbred', 'Appaloosa', 'Arab']
+breeds = ['Fancy Pants Warmblood', 'Quarter Horse', 'Paint', 'Fjord', 'Thoroughbred', 'Houyhnhnm', 'Arab']
 sex = ['mare', 'gelding']
-colours = ['bay', 'black', 'palomino', 'chestnut', 'dapple grey', 'flaxen chestnut', 'bucksin']
+colours = ['bay', 'black', 'palomino', 'chestnut', 'grey', 'flaxen chestnut', 'bucksin']
 
 5.times.each do
   Horse.create(
@@ -57,7 +57,7 @@ horses = Horse.all
 
 20.times.each do
   Post.create(
-    date: Faker::Date.between(60.days.ago, Date.today),
+    date: Faker::Time.between(60.days.ago, Date.today, :all),
     horse: horses.sample,
     user: users.sample,
     category: Category.all.sample
@@ -66,14 +66,14 @@ end
 
 posts = Post.all
 
-example_logs ["horse is crazy", 'horse is lazy', 'has a random cut', 'blanket is broken', 'did not seem very sound today', 'nearly excaped from me', 'lost shoe and I cannot find it']
+example_logs ["horse is crazy", 'horse is lazy', 'has a random cut', 'did not seem very sound today', 'nearly excaped from me', 'lost shoe and I cannot find it']
 
 20.times.each do
   Log.create(
     date: Faker::Date.between(20.days.ago, Date.today),
     horse: horses.sample,
     user: users.sample,
-    body: example_logs.sample 
+    body: example_logs.sample
   )
 end
 

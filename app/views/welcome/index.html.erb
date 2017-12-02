@@ -1,76 +1,25 @@
 <h1>Welcome!</h1>
 
-
-
-<h2>Current Weather </h2>
-<div class="current-weather">
-
-  <%=@darksky['currently']["summary"] %>
-  <div>
-    <canvas id="icon" width="128" height="128"></canvas>
-  <% icon = @darksky['currently']["icon"] %>
-</div>
-  <%=@darksky['currently']["temperature"] %> °C <br>
-  Chance of Precip: <%=@darksky['currently']["precipProbability"] %>
-
-
-  <script>
-  var skycons = new Skycons({"color": "purple"})
-  skycons.add("icon", "<%=icon%>");
-  skycons.play();
-</script>
-</div>
-
-
- <% i = 0 %>
-<%= calendar number_of_days: 5 , events: @posts do |date, posts| %>
-<%= date.day %>
-
-
-  <% posts.each do |post| %>
-    <div>
-      <%= post.horse.name %> <br>
+<div class="row">
+  <div class="col-md">
+    <div class="card dash">
+      Reminders
     </div>
-  <% end %>
-
-<style>
-.calendar-heading {
-  display: none;
-}
-</style>
-
-<% weather_date = DateTime.strptime(@darksky["daily"]["data"][i]["time"].to_s, '%s') %>
-<% weather_date_simple = weather_date.strftime('%Y-%m-%d') %>
-<%if date.to_s == weather_date_simple %>
-<%= weather_date.strftime('%B %d, %Y') %>
-   <h1>I match!</h1>
-   <% end %>
-<div class="forecast-icon">
-<% icon = 'icon_' + i.to_s %>
-<% icon_string = @darksky["daily"]["data"][i]["icon"] %>
-<canvas id="<%=icon%>"  width="60" height="60"></canvas>
-<script>
-  var skycons = new Skycons({"color": "purple"})
-  skycons.add("<%=icon%>", "<%=icon_string%>")
-    skycons.play();
- </script>
+  </div>
+  <div class="col-md">
+    <div class="card dash">
+      Recent Rides/Training Sessions
+    </div>
+  </div>
+  <div class="col-md">
+      <div class="card dash">
+        Calender
+      </div>
+        <div class="card dash">
+          Weather
+        </div>
+  </div>
 </div>
-<div style="max-width:200px">
- High:  <%= @darksky["daily"]["data"][i]["temperatureHigh"] %>°C<br>
-Low: <%= @darksky["daily"]["data"][i]["temperatureLow"] %>°C <br>
-<%= @darksky["daily"]["data"][i]["summary"] %>
-</div.
- <% i += 1%>
-
-<% end %>
-
-
-
-
-
-
-
-
 
 
 <p>Manage and track your riding life</p>
