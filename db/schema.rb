@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201004854) do
+ActiveRecord::Schema.define(version: 20171202025946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 20171201004854) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "reminders", force: :cascade do |t|
+    t.text "body"
+    t.datetime "date"
+    t.bigint "user_id"
+    t.bigint "horse_id"
+    t.string "upload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["horse_id"], name: "index_reminders_on_horse_id"
+    t.index ["user_id"], name: "index_reminders_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -120,6 +132,8 @@ ActiveRecord::Schema.define(version: 20171201004854) do
   add_foreign_key "post_images", "posts"
   add_foreign_key "posts", "horses"
   add_foreign_key "posts", "users"
+  add_foreign_key "reminders", "horses"
+  add_foreign_key "reminders", "users"
   add_foreign_key "too_many_horses", "horses"
   add_foreign_key "too_many_horses", "users"
 end

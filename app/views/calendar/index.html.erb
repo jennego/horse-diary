@@ -1,6 +1,15 @@
 <%= month_calendar events: @posts do |date, posts| %>
   <%= date.day %>
 
+  <%@reminders.each do |rem| %>
+    <%  if date.to_s  == rem.start_time.strftime('%Y-%m-%d') %>
+     <h1>I match!</h1>
+     <%= rem.date.strftime('%I:%M') %>
+     <%= rem.body %>
+     <%= rem.horse.name if rem.horse.present?%>
+    <% end %>
+  <% end %>
+
   <% posts.each do |post| %>
     <div>
       <%= post.horse.name %> <br>

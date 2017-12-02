@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   get('/calendar', {to: 'calendar#index', as: :calendar})
   resources :horses
+  resources :reminders 
   resources :users
   resource :session, only:[:new]
   root 'welcome#index'

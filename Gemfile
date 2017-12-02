@@ -34,10 +34,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem "select2-rails"
 gem 'devise'
-gem 'momentjs-rails'
-gem 'bootstrap-datepicker-rails'
 gem "simple_calendar"
-gem 'open-weather'
 gem 'geocoder'
 gem 'trix'
 gem "cocoon"

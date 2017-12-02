@@ -18,7 +18,6 @@
 //= require flatpickr
 //= require popper
 //= require bootstrap-sprockets
-//= require moment
 //= require cocoon
 //= require rails-ujs
 //= require_tree .

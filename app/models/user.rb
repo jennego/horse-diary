@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_many :horses, through: :too_many_horses
-  has_many :too_many_horses, dependent: :nullify  
+  has_many :too_many_horses, dependent: :nullify
+  has_many :reminders
 end

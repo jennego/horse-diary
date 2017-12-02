@@ -33,12 +33,18 @@
     </div>
   <% end %>
 
+<style>
+.calendar-heading {
+  display: none;
+}
+</style>
 
 <% weather_date = DateTime.strptime(@darksky["daily"]["data"][i]["time"].to_s, '%s') %>
 <% weather_date_simple = weather_date.strftime('%Y-%m-%d') %>
 <%if date.to_s == weather_date_simple %>
 <%= weather_date.strftime('%B %d, %Y') %>
    <h1>I match!</h1>
+   <% end %>
 <div class="forecast-icon">
 <% icon = 'icon_' + i.to_s %>
 <% icon_string = @darksky["daily"]["data"][i]["icon"] %>
@@ -55,9 +61,10 @@ Low: <%= @darksky["daily"]["data"][i]["temperatureLow"] %>°C <br>
 <%= @darksky["daily"]["data"][i]["summary"] %>
 </div.
  <% i += 1%>
- <% end %>
 
 <% end %>
+
+
 
 
 
