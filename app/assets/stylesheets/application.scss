@@ -11,7 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
 
-//*= require trix
+ *= require trix
+ *= require flatpickr
  *= require bootstrap-datepicker3
  *= require jquery.Jcrop
  *= require select2
@@ -38,4 +39,20 @@ h2.horse-heading {
 
 .trix-editor, .trix-content {
 min-height: 220px !important;
+}
+
+.more-input {
+  float:right;
+  background-color: grey;
+  color: white;
+  padding: 4px;
+  margin-top: -20px;
+}
+
+.hide {
+  display: none;
+}
+
+.subform {
+  margin-left: 1rem;
 }

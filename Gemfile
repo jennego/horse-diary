@@ -42,6 +42,8 @@ gem 'geocoder'
 gem 'trix'
 gem "cocoon"
 gem 'forecast_io'
+gem 'flatpickr'
+
 
 
 

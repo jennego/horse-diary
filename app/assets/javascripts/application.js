@@ -15,12 +15,11 @@
 //= require jquery3
 //= require jquery.Jcrop
 //= require select2
+//= require flatpickr
 //= require popper
 //= require bootstrap-sprockets
 //= require moment
 //= require cocoon
-//= require bootstrap-datepicker
-//= require bootstrap-datepicker/core
 //= require rails-ujs
 //= require_tree .
 
