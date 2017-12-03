@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   def update
     find_post
+      @post.user = current_user
     if @post.update post_params
       redirect_to post_path(@post)
     else

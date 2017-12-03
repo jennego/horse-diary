@@ -7,12 +7,14 @@ Filter by: [select]
 <%= link_to post_path(post) do %>
   <strong> <%= post.title %> -  <%= post.date.strftime('%B %d, %Y') if post.date.present? %> </strong> <br>
   <% end %>
-  Horse:
-  <%= image_tag post.horse.avatar_url.url(:thumb)  if post.horse.avatar_url.present?%>
-  <%= post.horse.name %> <br>
+  <div class="horse-info">
+  <%= image_tag post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if post.horse.avatar_url.present?%>
+  <%= post.horse.name %>
+</div>
 
       <% post.categories.each do |c| %>
-      <div class="btn btn-dark" style="background-color: <%=c.color%>"> <%= c.name %> </div>
+      <div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %>
+<%= c.name %> </div>
       <% end %>
 </div>
 <% end %>
