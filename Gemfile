@@ -45,6 +45,10 @@ gem 'flatpickr'
 
 
 
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -54,6 +58,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'faker'
+  gem 'letter_opener'
+
 end
 
 group :development do

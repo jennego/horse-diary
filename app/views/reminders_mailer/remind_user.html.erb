@@ -1,0 +1,10 @@
+Hello,
+<% if @horse.present? %>
+<p> <%= @horse.name %></p>
+<% end %>
+
+<p> <%= @reminder.body%> </p>
+
+<% if @reminder.date.present? %>
+<p> <%= @reminder.date %></p>
+<% end %>

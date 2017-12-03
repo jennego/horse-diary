@@ -14,6 +14,8 @@
 </div>
 <%= t.input :color %>
 <%= t.input :breed %>
+<%=  t.input :sex, label: 'Gender', collection: ['Mare', 'Gelding', 'Stallion', 'Filly', 'Colt'] %>
+
 <%= t.input :height %>
 <%= t.submit :submit, class: "btn btn-primary" %>
 <% end %>
