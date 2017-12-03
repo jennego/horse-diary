@@ -1,16 +1,16 @@
 <h3> <%= @post.date.strftime('%B %d, %Y')%> </h3>
 <h3>  <%= @post.title %> </h3>
 
- <%= image_tag (@post.horse.avatar_url.url(:small)) if @post.horse.avatar_url.present? %>
-
-<%= link_to horse_path(@post.horse) do %>
-<%= @post.horse.name %> <br>
+  <div class="horse-info">
+    <%= link_to horse_path(@post.horse) do %>
+  <%= image_tag @post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if @post.horse.avatar_url.present?%>
+  <%= @post.horse.name %>
   <% end %>
+</div>
 
-Type:
 <% @post.categories.each do |c| %>
-<div class="btn btn-dark" style="background-color: <%=c.color%>"> <%= c.name %> </div>
-<% end %>
+<div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %>
+<%= c.name %> </div><% end %>
 
 <br>
  <%=raw @post.body %>
