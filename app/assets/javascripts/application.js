@@ -28,4 +28,10 @@ $(document).ready(function() {
   $( "#dropdown" ).select2({
     theme: "bootstrap"
   });
+
+
+$('.reminders').on('mouseover', function(event) {
+
+})
+
 });

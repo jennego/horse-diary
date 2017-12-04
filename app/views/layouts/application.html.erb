@@ -41,28 +41,39 @@
        <li class="nav-item">
          <%= link_to 'New Reminder', new_reminder_path, class: "nav-link" %>
        </li>
-      <li class="nav-item">
-        <%= link_to 'All Reminders', reminders_path, class: "nav-link" %>
+
+
+
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Reminders <span class="badge badge-info"> <%= @reminder_list.length =%> </span>
+
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= render 'application/reminders' %>
+            <div class="dropdown-divider"></div>
+          <%= link_to 'All Reminders', reminders_path, class: "dropdown-item" %>
+        </div>
       </li>
  </ul>
 
  <ul class="navbar-nav ml-auto">
    <% if user_signed_in? %>
-   <li class="nav-item">
-     <span style="color:white"> Hey, <%=current_user.full_name %> </span>
+   <li class="nav-item nav-link text-warning">
+     <span> Hey, <%=current_user.full_name %> </span>
    </li>
   <li class="nav-item">
-    <%= link_to('Edit User', edit_user_registration_path, class:"btn btn-outline-warning") %>
+    <%= link_to('Edit User', edit_user_registration_path, class:"btn btn-outline-warning user-button") %>
   </li>
   <li class="nav-item">
-  <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-outline-warning") %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-outline-warning user-button") %>
   </li>
 <% else %>
   <li class="nav-item">
-    <%= link_to('Register', new_user_registration_path, class:"btn btn-outline-warning") %>
+    <%= link_to('Register', new_user_registration_path, class:"btn btn-outline-warning user-button") %>
   </li>
   <li class="nav-item">
-  <%= link_to('Login', new_user_session_path, class:"btn btn-outline-warning")  %>
+  <%= link_to('Login', new_user_session_path, class:"btn btn-outline-warning user-button")  %>
   </li>
 <% end %>
 

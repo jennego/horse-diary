@@ -22,6 +22,13 @@
  */
  @import 'bootstrap';
 
+ @media (min-width: 992px) {
+ .horse-side {
+   max-height: 1300px;
+  }
+ }
+
+
 
 h2.horse-heading {
   color:white;
@@ -91,4 +98,23 @@ min-height: 220px !important;
   color: white;
   background: rgba(0, 0, 0, 0.4);
   padding: 4px;
+}
+
+.horse-side {
+   height:600px;
+   background-size:cover;
+   background-position:center;
+   color:white;
+}
+
+a.remove_fields {
+  color: red;
+}
+
+.user-button {
+  margin: 0 5px;
+}
+
+.date-small {
+  font-size: 10px;
 }

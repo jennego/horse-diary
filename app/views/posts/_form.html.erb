@@ -2,7 +2,7 @@
 <%= f.input :date, as: :string, input_html: {class:'datepicker'} %>
 
 <%= f.input :title %>
-<%= f.association :horse, label: "Horse", input_html: {class:'dropdown'} %>
+<%= f.association :horse, label: "Horse", input_html: {class:'image_dropdown'} %>
 <%= f.input :body, as: :trix_editor %>
 <%= f.simple_fields_for :post_images do |img| %>
   <%= render 'post_image_fields', f:img %>
@@ -44,7 +44,7 @@ let currentdate = moment().format('YYYY-MM-DD')
     return $horse;
   };
 
-  $(".dropdown").select2({
+  $("image_dropdown").select2({
     templateResult: formatHorse
   });
 });

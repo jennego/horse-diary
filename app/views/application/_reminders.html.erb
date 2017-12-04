@@ -1,0 +1,6 @@
+<% @reminder_list.each do |rem| %>
+  <a class="dropdown-item" href="reminders/<%= rem.id %>">
+   <span class='date-small'> <%= rem.date.strftime('%b %d at %I:%M%p') %> </span>
+  <%= rem.body %>
+</a>
+<% end %>

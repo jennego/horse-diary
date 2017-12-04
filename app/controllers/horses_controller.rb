@@ -1,5 +1,7 @@
 class HorsesController < ApplicationController
 before_action :authenticate_user!
+before_action :define_reminders
+
     def new
       @horse = Horse.new
       render 'horses/new'

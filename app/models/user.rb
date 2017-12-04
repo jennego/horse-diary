@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
-  has_many :horses, through: :too_many_horses
   has_many :too_many_horses, dependent: :nullify
+  has_many :horses, through: :too_many_horses
   has_many :reminders
 
   def full_name

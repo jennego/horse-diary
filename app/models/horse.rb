@@ -4,7 +4,7 @@ class Horse < ApplicationRecord
   has_many :reminders
   # has_many :users, through: :too_many_horses
   has_many :too_many_horses, dependent: :nullify
-  has_one :horse_profile
+  has_many :users, through: :too_many_horses
 
   mount_uploader :avatar_url, AvatarUploader
 

@@ -49,7 +49,7 @@ colours = ['bay', 'black', 'palomino', 'chestnut', 'grey', 'flaxen chestnut', 'b
     breed:breeds.sample,
     color: colours.sample,
     sex: sex.sample,
-    user: users.sample
+    users: users.sample
   )
 end
 

@@ -1,0 +1,9 @@
+<% @reminders.each do |rem| %>
+<% if rem.date.between?(DateTime.now, DateTime.now + 7.days) %>
+
+<div>
+  <%= rem.date.strftime('%B %d %Y at %I:%M%p') %>
+  <%= rem.body %>
+</div>
+<% end %>
+<% end %>
