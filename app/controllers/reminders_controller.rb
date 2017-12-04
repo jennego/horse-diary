@@ -1,4 +1,5 @@
 class RemindersController < ApplicationController
+  before_action :authenticate_user!
   def new
     @reminder = Reminder.new
   end

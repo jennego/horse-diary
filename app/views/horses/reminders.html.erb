@@ -1,0 +1,5 @@
+<h1>Reminders for <%=@horse.name %>  </h1>
+
+<% @reminders.each do |rem| %>
+<%= link_to rem.body %> <br>
+<% end %>

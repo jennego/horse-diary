@@ -1,5 +1,5 @@
 class HorsesController < ApplicationController
-
+before_action :authenticate_user!
     def new
       @horse = Horse.new
       render 'horses/new'
@@ -12,7 +12,7 @@ class HorsesController < ApplicationController
         render :crop
       else
         redirect_to horse_path(@horse)
-      end
+       end
       else
         render :new
       end
@@ -44,6 +44,16 @@ class HorsesController < ApplicationController
     end
 
     def destroy
+    end
+
+    def posts
+      find_horse
+      @posts = @horse.posts
+    end
+
+    def reminders
+      find_horse
+      @reminders = @horse.reminders
     end
 
     private
