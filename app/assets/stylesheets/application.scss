@@ -76,3 +76,19 @@ min-height: 220px !important;
   border: 2px grey dashed;
   padding: 5px;
 }
+
+.panel {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color:white;
+}
+
+.panel-text {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+}
