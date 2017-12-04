@@ -16,6 +16,7 @@
 //= require jquery.Jcrop
 //= require select2
 //= require flatpickr
+//= require moment
 //= require popper
 //= require bootstrap-sprockets
 //= require cocoon

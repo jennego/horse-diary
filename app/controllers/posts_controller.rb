@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def new
+    require 'time'
     @post = Post.new
     @horses = Horse.all.to_json
     2.times {@post.post_images.build}
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 
   def show
     find_post
+    require 'time'
   end
 
 

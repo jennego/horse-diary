@@ -15,11 +15,16 @@
 
 <% end %>
 
+<% currentdate = Time.now.strftime("%Y")%>
+
 
 <script>
+
 $(document).ready(function() {
+let currentdate = moment().format('YYYY-MM-DD')
   $('.datepicker').flatpickr(
-      {enableTime: true}
+      {enableTime: true,
+      defaultDate: currentdate }
   );
 
   $('.multiple').select2();
