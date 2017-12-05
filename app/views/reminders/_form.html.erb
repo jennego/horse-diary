@@ -1,7 +1,7 @@
 <%= simple_form_for @reminder do |f| %>
 <%= f.input :date, as: :string, input_html: {class:'datepicker'} %>
 <%= f.input :body %>
-<%= f.association :horse, label: "Horse", input_html: {class:'dropdown'} %>
+<%= f.association :horse, label: "Horse", input_html: {class:'horse-dropdown'} %>
 <%= f.input :upload, as: :file %>
 
 <%= f.submit "Add Reminder", class: "btn btn-primary" %>
@@ -31,7 +31,7 @@ $(document).ready(function() {
     return $horse;
   };
 
-  $(".dropdown").select2({
+  $(".horse-dropdown").select2({
     templateResult: formatHorse
   });
 });

@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="row">
 <div class="col-lg-3 horse-side" style="background-image:url(<%=@horse.avatar_url.url%>)">
   <h2 class="horse-heading"> <%= @horse.name %> </h2>
@@ -22,8 +23,13 @@ Archive this horse
   <%if @horse.full_name?%> <strong> Full Name: </strong> <%= @horse&.full_name %> <br> <%end%>
 
   <%if @horse.breed.present?%> <strong> Breed: </strong> <%= @horse&.breed %> </br> <% end %>
-  <%if @horse.approx_age.present?%><strong> Age(approx) </strong> <%= Date.today.year - @horse&.approx_age %> <% end%> <br>
-  <%if @horse.age.present?%> <strong> Age </strong> <%= Date.today - @horse&.age %> / Birthday: <%= @horse&.age %>  <%end%> <br>
+  <%if @horse.approx_age.present?%><strong> Age(approx) </strong> <%= Date.today.year - @horse&.approx_age %> <br> <% end%>
+  <%if @horse.age.present?%> <strong> Age </strong> <%= Date.today - @horse&.age %> / Birthday: <%= @horse&.age %> <br> <%end%>
+
+
+<% if @horse.users.present?%>
+  Rider: <%= @horse.users.first.full_name %>
+  <% end %>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
@@ -37,4 +43,5 @@ Archive this horse
   <p>Add Reminder</p>
 </div>
 
+</div>
 </div>
