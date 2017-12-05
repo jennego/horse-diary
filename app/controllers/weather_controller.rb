@@ -4,7 +4,7 @@ class WeatherController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @reminders = Reminder.all
 
    require 'forecast_io'
 

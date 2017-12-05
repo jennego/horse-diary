@@ -1,4 +1,6 @@
 <h2>Current Weather </h2>
+
+
 <div class="current-weather">
 
   <%=@darksky['currently']["summary"] %>
@@ -19,15 +21,10 @@
 
 
  <% i = 0 %>
-<%= calendar number_of_days: 5 , events: @posts do |date, posts| %>
+<%= calendar number_of_days: 7 , events: @reminders do |date, reminders| %>
 <%= date.day %>
 
 
-  <% posts.each do |post| %>
-    <div>
-      <%= post.horse.name %> <br>
-    </div>
-  <% end %>
 
 <style>
 .calendar-heading {
@@ -37,25 +34,48 @@
 
 <% weather_date = DateTime.strptime(@darksky["daily"]["data"][i]["time"].to_s, '%s') %>
 <% weather_date_simple = weather_date.strftime('%Y-%m-%d') %>
-<%if date.to_s == weather_date_simple %>
-<%= weather_date.strftime('%B %d, %Y') %>
-   <h1>I match!</h1>
-   <% end %>
+
+<div class="weather-info">
 <div class="forecast-icon">
 <% icon = 'icon_' + i.to_s %>
 <% icon_string = @darksky["daily"]["data"][i]["icon"] %>
+<a href="#" data-toggle="tooltip" data-placement="left" title="<%= @darksky["daily"]["data"][i]["summary"] %>
+">
 <canvas id="<%=icon%>"  width="60" height="60"></canvas>
+</a>
+
 <script>
   var skycons = new Skycons({"color": "purple"})
   skycons.add("<%=icon%>", "<%=icon_string%>")
     skycons.play();
  </script>
-</div>
-<div style="max-width:200px">
- High:  <%= @darksky["daily"]["data"][i]["temperatureHigh"] %>°C<br>
-Low: <%= @darksky["daily"]["data"][i]["temperatureLow"] %>°C <br>
-<%= @darksky["daily"]["data"][i]["summary"] %>
-</div.
- <% i += 1%>
 
+</div>
+<div class="temp">
+H: <%= @darksky["daily"]["data"][i]["temperatureHigh"].round(0) %>°C<br>
+L: <%= @darksky["daily"]["data"][i]["temperatureLow"].round(0) %>°C
+</div>
+
+ <% i += 1%>
+</div>
+
+ <% reminders.each do |rem| %>
+ <div>
+   <%= rem.body %> <br>
+ </div>
+ <% end %>
 <% end %>
+
+
+
+<script>
+
+$('td.day').on('click', function(e) {
+  $(this).alert('hi')
+ })
+
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>

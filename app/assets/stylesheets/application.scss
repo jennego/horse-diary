@@ -107,6 +107,10 @@ min-height: 220px !important;
    color:white;
 }
 
+.horse-card {
+box-shadow: 10px 6px 5px -1px rgba(0,0,0,0.23);
+}
+
 a.remove_fields {
   color: red;
 }
@@ -117,4 +121,13 @@ a.remove_fields {
 
 .date-small {
   font-size: 10px;
+}
+
+.weather-info {
+  font-size: 14px;
+  float: right;
+}
+
+td.day:hover {
+  background:rgb(208, 177, 247);
 }

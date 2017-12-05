@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :reminders
   resources :users
+  resources :weather
   resource :session, only:[:new]
 
   authenticated :user do
