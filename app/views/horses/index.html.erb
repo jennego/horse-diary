@@ -4,8 +4,8 @@
 <% @horses.each do |horse| %>
 
 <div class="col-md-4">
-  <div class="card horse-card" style="margin:10px">
-    <div class="row d-flex">
+  <div class="card" style="margin:10px">
+    <div class="row d-flex horse-card">
   <div class="col-sm" style="background-image:url(<%= horse.avatar_url.url(:small)%>); height:200px; background-size:cover; padding:0" >
  </div>
  <div class="col-sm">

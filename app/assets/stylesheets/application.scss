@@ -28,6 +28,10 @@
   }
  }
 
+ body {
+   background-image: url('dust_scratches.png');
+ }
+
 
 
 h2.horse-heading {
@@ -61,6 +65,7 @@ img.horse-info-avatar {
 
 .trix-editor, .trix-content {
 min-height: 220px !important;
+background-color: #fff;
 }
 
 .more-input {
@@ -109,6 +114,10 @@ min-height: 220px !important;
 
 .horse-card {
 box-shadow: 10px 6px 5px -1px rgba(0,0,0,0.23);
+}
+
+.card {
+  border: 0;
 }
 
 a.remove_fields {
