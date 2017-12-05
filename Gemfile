@@ -41,7 +41,7 @@ gem "cocoon"
 gem 'forecast_io'
 gem 'flatpickr'
 gem 'momentjs-rails'
-
+gem 'cancancan'
 
 
 

@@ -9,7 +9,8 @@ before_action :define_reminders
 
     def create
       @horse = Horse.new horse_params
-      
+       @horse.users << current_user
+
       if @horse.save
        if params[:horse][:avatar_url].present?
         render :crop
