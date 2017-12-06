@@ -18,7 +18,9 @@
 <% currentdate = Time.now.strftime("%Y")%>
 
 
-<% @category.each do |c| %>
+<img src='/horse_icons/ride_icon.PNG' />
+
+
 <script>
 
 $(document).ready(function() {
@@ -56,7 +58,7 @@ let currentdate = moment().format('YYYY-MM-DD')
 
 
     let $category= $(
-    `<span> <%=image_tag (c.category_img) %>`  + cat.text  + `</span>`
+    `<span> <img src='/horse_icons/${iconName}' style='width:40px' />`  + cat.text  + `</span>`
    );
 
     return $category
