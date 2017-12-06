@@ -35,6 +35,8 @@ class PostsController < ApplicationController
 
   def edit
       find_post
+      @category = Category.all
+
   end
 
   def update
