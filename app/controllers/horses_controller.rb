@@ -32,6 +32,8 @@ before_action :define_reminders
 
     def update
       find_horse
+             @horse.users << current_user
+
       if @horse.update horse_params
         if params[:horse][:avatar_url].present?
           render :crop
@@ -45,6 +47,8 @@ before_action :define_reminders
 
     def show
       find_horse
+      @log = Log.new
+      @logs = @horse.logs
     end
 
     def destroy

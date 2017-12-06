@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def define_reminders
     start_date = Date.today
     end_date = 7.days.from_now
-    @reminder_list = Reminder.where(date: start_date...end_date)
+    @reminder_list = Reminder.where(date: start_date...end_date).order('date asc')
   end
 
 end

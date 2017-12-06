@@ -2,7 +2,7 @@
 <%= f.input :date, as: :string, input_html: {class:'datepicker'} %>
 
 <%= f.input :title %>
-<%= f.association :horse, label: "Horse", input_html: {class:'image_dropdown'} %>
+<%= f.association :horse, label: "Horse", input_html: {class:'image-dropdown'} %>
 <%= f.input :body, as: :trix_editor %>
 <%= f.simple_fields_for :post_images do |img| %>
   <%= render 'post_image_fields', f:img %>
@@ -10,7 +10,7 @@
   <div class="links">
     <%= link_to_add_association 'add image', f, :post_images %>
   </div>
-<%= f.association :categories, input_html: {class: "multiple"} %>
+<%= f.association :categories, input_html: {class: "category"} %>
 <%= f.submit "Add Session", class: "btn btn-primary" %>
 
 <% end %>
@@ -18,6 +18,7 @@
 <% currentdate = Time.now.strftime("%Y")%>
 
 
+<% @category.each do |c| %>
 <script>
 
 $(document).ready(function() {
@@ -28,7 +29,6 @@ let currentdate = moment().format('YYYY-MM-DD')
     }
   );
 
-  $('.multiple').select2();
 
   function formatHorse (horse) {
     if (!horse.id) {
@@ -44,8 +44,33 @@ let currentdate = moment().format('YYYY-MM-DD')
     return $horse;
   };
 
-  $("image_dropdown").select2({
-    templateResult: formatHorse
+
+  function formatCategory (cat) {
+    if (!cat.id) {
+      return cat.text;
+    }
+
+  let iconName = cat.text.toLowerCase().replace(' ', '_') + '_icon' + ".PNG"
+
+  console.log(iconName);
+
+
+    let $category= $(
+    `<span> <%=image_tag (c.category_img) %>`  + cat.text  + `</span>`
+   );
+
+    return $category
+  };
+
+  $(".image-dropdown").select2({
+    templateResult: formatHorse,
+    templateSelection:formatHorse
+  });
+
+  $('.category').select2({
+    templateResult: formatCategory
+
   });
 });
 </script>
+<% end %>

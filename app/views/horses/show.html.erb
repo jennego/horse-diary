@@ -21,26 +21,39 @@ Archive this horse
 
 <div class="horse-details">
   <%if @horse.full_name?%> <strong> Full Name: </strong> <%= @horse&.full_name %> <br> <%end%>
+  <%if @horse.reg_name?%> <strong> Reg Name: </strong> <%= @horse&.reg_name %> <br> <%end%>
+  <%if @horse.show_name?%> <strong> Show Name: </strong> <%= @horse&.show_name %> <br> <%end%>
 
+  <%if @horse.color.present?%> <strong> Colour: </strong> <%= @horse&.color %> </br> <% end %>
   <%if @horse.breed.present?%> <strong> Breed: </strong> <%= @horse&.breed %> </br> <% end %>
   <%if @horse.approx_age.present?%><strong> Age(approx) </strong> <%= Date.today.year - @horse&.approx_age %> <br> <% end%>
   <%if @horse.age.present?%> <strong> Age </strong> <%= Date.today - @horse&.age %> / Birthday: <%= @horse&.age %> <br> <%end%>
+  <%if @horse.sex.present?%> <strong> Gender: </strong> <%= @horse&.sex %> </br> <% end %>
+
+
 
 
 <% if @horse.users.present?%>
   Rider: <%= @horse.users.first.full_name %>
   <% end %>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
+
 
 </div>
+</div>
 
-<div class="col-md-4">
-  <%= image_tag @horse.avatar_url.url(:small), class: "float:right" if @horse.avatar_url.present? %>
-  Reminders?
-  <p>Add Log</p>
-  <p>Add Reminder</p>
+<div class="col-md-5">
+<br> <%= render 'logs/form' %> <br>
+
+<div class="logs-list">
+  <div class="row log-row">
+  <% @logs.each do |log| %>
+    <%= render '/logs/log', log: log %>
+  <% end %>
+</div>
+</div>
+
+
 </div>
 
 </div>

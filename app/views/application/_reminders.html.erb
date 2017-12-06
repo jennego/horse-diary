@@ -1,6 +1,6 @@
 <% @reminder_list.each do |rem| %>
-  <a class="dropdown-item" href="reminders/<%= rem.id %>">
-   <span class='date-small'> <%= rem.date.strftime('%b %d at %I:%M%p') %> </span>
-  <%= rem.body %>
-</a>
+<%= link_to reminder_path(rem), class: "dropdown-item" do %>
+   <span class="badge badge-info"><%= rem.date.strftime('%b %d') %> </span>
+  <%= rem.body %> <%= rem.horse.name if rem.horse.present?%>  <span class="badge badge-warning"> <%= rem.date.strftime('%l%p') %></span>
+  <% end %>
 <% end %>

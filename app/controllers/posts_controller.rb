@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
 
   def new
-    require 'time'
     @post = Post.new
     @horses = Horse.all.to_json
+    @category = Category.all
     2.times {@post.post_images.build}
     render 'posts/new'
 

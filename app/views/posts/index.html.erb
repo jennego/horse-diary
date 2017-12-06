@@ -1,20 +1,30 @@
+<div class="container-fluid">
+
 Filter by: [select]
 
+<div class="row  d-flex align-items-center">
 
 
 <% @posts.each do |post| %>
-  <div style="border:2px black solid; margin-bottom:20px;">
+<div class="col-md-4">
+  <div class="card" style="margin-bottom:15px">
 <%= link_to post_path(post) do %>
-  <strong> <%= post.title %> -  <%= post.date.strftime('%B %d, %Y') if post.date.present? %> </strong> <br>
+  <h5> <%=  post.date.strftime(' %B %d, %Y') if post.date.present? %> </h5>
+  <h4> <%= post.title %> </h4>
   <% end %>
   <div class="horse-info">
   <%= image_tag post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if post.horse.avatar_url.present?%>
   <%= post.horse.name %>
 </div>
-
+      <div class="card-block ml-auto">
       <% post.categories.each do |c| %>
       <div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %>
 <%= c.name %> </div>
       <% end %>
+    </div>
+</div>
 </div>
 <% end %>
+
+</div>
+</div>

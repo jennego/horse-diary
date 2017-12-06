@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get('/about', { to: 'welcome#about', as: :about })
   resources :posts
   get('/calendar', {to: 'calendar#index', as: :calendar})
-  resources :horses
+  resources :horses do
+    resources :logs
+  end
        get'/horses/:id/posts', {to: 'horses#posts', as: :post_by_horse}
        get'/horses/:id/reminders', {to: 'horses#reminders', as: :reminders_by_horse}
 

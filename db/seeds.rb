@@ -49,11 +49,18 @@ colours = ['bay', 'black', 'palomino', 'chestnut', 'grey', 'flaxen chestnut', 'b
     breed:breeds.sample,
     color: colours.sample,
     sex: sex.sample,
-    users: users.sample
   )
 end
 
 horses = Horse.all
+
+5.times.each do
+  TooManyHorse.create(
+    horse_id: horses.sample,
+    user_id: users.sample
+  )
+end
+
 
 20.times.each do
   Post.create(
@@ -83,7 +90,7 @@ sample_reminders = ['vet', 'farrier', 'lesson', 'trainer', 'order more hay', 'bu
   Reminder.create(
     date: Faker::Time.forward(23, :all),
     body: sample_reminders.sample,
-    user: users.sample,
+    user: users.sample
   )
 end
 
