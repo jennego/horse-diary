@@ -6,5 +6,5 @@ Hello,
 <p> <%= @reminder.body%> </p>
 
 <% if @reminder.date.present? %>
-<p> <%= @reminder.date %></p>
+<p> <%= @reminder.date.strftime(' %B %d, %Y at %l:%M') %></p>
 <% end %>

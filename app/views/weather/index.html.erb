@@ -2,6 +2,10 @@
 <h2>Current Weather </h2>
 
 
+
+
+<% if params[:longitude] && params[:latitude] %>
+
 <div class="current-weather">
 
   <%=@darksky['currently']["summary"] %>
@@ -66,6 +70,27 @@ L: <%= @darksky["daily"]["data"][i]["temperatureLow"].round(0) %>°C
  </div>
  <% end %>
 <% end %>
+
+Weather data from <a href="http://darksky.com"> DarkSky API </a>
+
+<% else %>
+
+
+  <p> Please be patient and "hold your horses" while we fetch your location for the weather.</p>
+<%= image_tag 'horserain.gif' %>
+
+
+
+  <script>
+  function setLocation(lat, long) {
+    window.location = `<%= weather_index_path %>?longitude=${long}&latitude=${lat}`
+  }
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLocation(position.coords.latitude, position.coords.longitude);
+
+    });
+  </script>
+<% end  %>
 
 </div>
 

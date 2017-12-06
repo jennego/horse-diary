@@ -44,6 +44,8 @@
          <%= link_to 'Weather', weather_index_path, class: "nav-link" %>
        </li>
 
+    <% if controller.controller_name != "user" && controller.action_name != "edit" %>
+
 
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,6 +60,7 @@
 
         </div>
       </li>
+      <% end %>
       <%end %>
  </ul>
 
