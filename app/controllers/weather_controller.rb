@@ -9,7 +9,7 @@ class WeatherController < ApplicationController
     latitude = params[:latitude].to_f
     end
 
-    @reminders = Reminder.all
+    @reminders = Reminder.where(user:current_user)
 
     require 'forecast_io'
     ForecastIO.api_key = ENV['DARKSKY_API']

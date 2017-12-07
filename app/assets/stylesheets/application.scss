@@ -60,6 +60,13 @@ img.horse-info-avatar {
   height: 40px;
 }
 
+img.horse-info-avatar-small {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+
 .current-weather {
   font-size: 20px;
   margin: grey 2px solid;
@@ -155,4 +162,32 @@ td.day:hover {
 .select2-container .select2-selection--single {
   height: 80px;
   padding-top: 5px;
+}
+
+
+.calendar-title {
+  font-size: 30px;
+}
+
+
+ a.card-link {
+  color: black;
+}
+
+a.card-link:hover, .horse-card:hover {
+  background-color: rgb(81, 32, 93);
+  color:white;
+}
+
+.categories {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.body-content {
+  margin: 25px 5px
+}
+
+a.dashboard-link {
+  text-decoration: none;
 }

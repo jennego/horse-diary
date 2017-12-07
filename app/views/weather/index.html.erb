@@ -71,12 +71,14 @@ L: <%= @darksky["daily"]["data"][i]["temperatureLow"].round(0) %>°C
  <% end %>
 <% end %>
 
-Weather data from <a href="http://darksky.com"> DarkSky API </a>
+Weather and forecast data from <a href="http://darksky.com"> DarkSky </a>
 
 <% else %>
 
 
   <p> Please be patient and "hold your horses" while we fetch your location for the weather.</p>
+
+  <p> You'll see if this is likely soon!</p>
 <%= image_tag 'horserain.gif' %>
 
 

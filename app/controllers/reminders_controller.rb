@@ -16,7 +16,7 @@ class RemindersController < ApplicationController
   end
 
   def index
-    @reminders = Reminder.order(created_at: :desc)
+    @reminders = Reminder.where(user:current_user).order(created_at: :desc)
   end
 
   def show

@@ -1,10 +1,11 @@
+<div class="container-fluid">
 <%= month_calendar events: @posts do |date, posts| %>
-  <%= date.day %> <br /> 
+  <%= date.day %> <br />
 
   <%@reminders.each do |rem| %>
     <%  if date.to_s  == rem.start_time.strftime('%Y-%m-%d') %>
-     <%= rem.date.strftime('%I:%M') %>
-     <%= rem.body %>
+    <span class="badge badge-warning">  <%= rem.date.strftime('%I:%M') %> </span>
+<%= rem.body %>
      <%= rem.horse.name if rem.horse.present?%> <br>
     <% end %>
   <% end %>
@@ -23,3 +24,4 @@
   <% end %>
 
 <% end %>
+</div>
