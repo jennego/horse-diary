@@ -4,12 +4,16 @@ class WeatherController < ApplicationController
 
 
   def index
-    @reminders = Reminder.all
+    if params[:longitude] && params[:latitude]
+    longtude = params[:longitude].to_f
+    latitude = params[:latitude].to_f
+    end
 
-   require 'forecast_io'
+    @reminders = Reminder.where(user:current_user)
 
+    require 'forecast_io'
     ForecastIO.api_key = ENV['DARKSKY_API']
-    @darksky = ForecastIO.forecast(49.2827, -123.1207, params: { units: 'ca' })
+    @darksky = ForecastIO.forecast(latitude, longtude, params: { units: 'ca' })
 
    def start_date
      @darksky["daily"]["data"][i]["time"]

@@ -1,4 +1,8 @@
-<h3> <%= @post.date.strftime('%B %d, %Y')%> </h3>
+<div class="row justify-content-center">
+<div class="col-md-10">
+  <div class="card" style="padding:10px">
+    <div class="card-block">
+<h5> <%= @post.date.strftime('%B %d, %Y')%> </h5>
 <h3>  <%= @post.title %> </h3>
 
   <div class="horse-info">
@@ -7,27 +11,55 @@
   <%= @post.horse.name %>
   <% end %>
 </div>
+<div class="body-content">
+<%=raw @post.body %>
+</div>
 
+<div class="categories">
 <% @post.categories.each do |c| %>
-<div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %>
+<div class="btn btn-info category" style="background-color: <%=c.color%>; margin:5px;"> <%= image_tag c.category_img, style: 'width:30px;' %>
 <%= c.name %> </div><% end %>
-
-<br>
- <%=raw @post.body %>
-
- <h1>Immges</h1>
- <div class="row">
- <% @post.post_images.each do |img| %>
- <div class="col-md">
- <%= image_tag img.image_url.url(:medium), style: 'width:500px' if img.image_url.present? %>
-</div>
- <% end %>
 </div>
 
-<div>
-<%= link_to 'edit', edit_post_path, class:"btn btn-warning" %>
+
+<div class="d-flex justify-content-center">
+<div id="carouselExampleControls" class="carousel slide" style="background:black; width:700px;" data-ride="carousel">
+    <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <% @post.post_images.each_with_index do |img, index| %>
+
+    <div class="carousel-item <%= 'active' if index == 0 %>">
+      <div class="d-flex justify-content-center align-items-center">
+      <%= image_tag img.image_url.url(:medium) if img.image_url.present? %>
+    </div>
+    </div>
+    <% end %>
+  </div>
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+</div>
+<div class="edit">
+<%= link_to 'edit', edit_post_path, class:"text-primary" %>
 <%= link_to 'delete', post_path(@post),
     data: {confirm: 'Are you sure?'},
-    method: :delete, class:"btn btn-danger" %>
+    method: :delete, class:"text-danger" %>
 
+</div>
+</div>
+</div>
+
+</div>
 </div>

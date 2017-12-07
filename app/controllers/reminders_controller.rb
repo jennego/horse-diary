@@ -10,13 +10,13 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new reminder_params
     @reminder.user = current_user
    if  @reminder.save
-      RemindersMailer.remind_user(@reminder).deliver     r
-      edirect_to reminders_path
+      RemindersMailer.remind_user(@reminder).deliver
+      redirect_to reminders_path
    end
   end
 
   def index
-    @reminders = Reminder.order(created_at: :desc)
+    @reminders = Reminder.where(user:current_user).order(created_at: :desc)
   end
 
   def show

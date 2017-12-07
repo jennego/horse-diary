@@ -1,23 +1,61 @@
+<div class="container-fluid">
 <h1>Dashboard</h1>
 <div class="row d-flex">
   <div class="col-md">
     <div class="card dash">
       <div class="card-block">
-      <h3> Reminders </h3>
+      <h3> Reminders  <i class="fa fa-bell" aria-hidden="true"></i>
+</h3>
+      <% @reminders.each do |rem| %>
+      <span class="badge badge-info"><%= rem.date.strftime('%b %d') %> </span>
+     <%= rem.body %> <%= rem.horse.name if rem.horse.present?%>  <span class="badge badge-warning"> <%= rem.date.strftime('%l%p') %></span> <br>
+      <% end %>
     </div>
   </div>
 </div>
   <div class="col-md">
     <div class="card dash">
+      <div class="card-block">
       <h3> Recent Rides/Training Sessions </h3>
+      <% @posts.limit(20).each do |post| %>
+      <%= link_to(post_path(post), class: "dashbaord-link") do %>
+    <span class="badge badge-info"><%= post.date.strftime('%b %d') %> </span> <%= post.title %>
+      <div class="horse-info" style="margin-left:25px; margin-top:2px">
+      <%= image_tag post.horse.avatar_url.url(:thumb), class:"horse-info-avatar-small"  if post.horse.avatar_url.present?%>
+      <%= post.horse.name %>
+    </div>
+    <% end %>
+     <br>
+      <% end %>
+    </div>
     </div>
   </div>
   <div class="col-md">
+    <div class="card dash">
+      <h2> Your Horses </h2>
+      <% @horses.each do |h| %>
+      <% if h.users.first == current_user %>
+       <%= link_to(horse_path(h)) do %>
+        <div class="horse-info" style="margin-bottom:5px">
+        <%= image_tag h.avatar_url.url(:thumb), class:"horse-info-avatar"  if h.avatar_url.present?%>
+        <%= h.name %>
+        <% end %>
+      </div>
+      <%end%>
+      <% end %>
+    </div>
       <div class="card dash">
-        <h2> calendar </h2>
+        <h2> Calendar </h2>
+        <%=link_to(calendar_path, class: 'dashboard-link') do%>
+        <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+        <% end %>
       </div>
         <div class="card dash">
           <h2> Weather </h2>
+            <%=link_to(weather_index_path, class: 'dashboard-link') do%>
+          <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
+          <% end %>
         </div>
   </div>
+</div>
 </div>
