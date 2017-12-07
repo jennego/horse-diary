@@ -1,0 +1,35 @@
+<%= simple_form_for @horse do |t| %>
+<%= t.input :avatar_url, as: :file%>
+<%= t.input :name %>
+<div class="more-names-link more-input"> More names </div>
+<div class="more-names subform hide">
+<%= t.input :full_name %>
+<%= t.input :show_name %>
+<%= t.input :reg_name %>
+</div>
+<%= t.input :approx_age %>
+<div class="horse-year-link more-input"> Show exact birth date </div>
+<div class="horse-year subform hide">
+<%= t.input :age, as: :string, input_html: { class:"datepicker" } %>
+</div>
+<%= t.input :color %>
+<%= t.input :breed %>
+<%=  t.input :sex, label: 'Gender', collection: ['Mare', 'Gelding', 'Stallion', 'Filly', 'Colt'] %>
+
+<%= t.input :height %>
+<%= t.submit :submit, class: "btn btn-primary" %>
+<% end %>
+<script>
+$(document).ready(function(){
+
+$('.more-names-link').on("click", function () {
+  $('.more-names').toggleClass('hide')
+})
+
+$('.horse-year-link').on("click", function () {
+  $('.horse-year').toggleClass('hide')
+})
+$('.datepicker').flatpickr();
+
+})
+</script>

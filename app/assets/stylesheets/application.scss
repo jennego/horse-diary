@@ -1,0 +1,158 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+*= require simple_calendar
+
+ *= require trix
+ *= require flatpickr
+ *= require jquery.Jcrop
+ *= require select2
+ *= require select2-bootstrap
+ *= require_tree .
+ *= require_self
+
+
+ */
+ @import 'bootstrap';
+
+ @media (min-width: 992px) {
+ .horse-side {
+   max-height: 1300px;
+  }
+ }
+
+ body {
+   background-image: url('dust_scratches.png');
+ }
+
+
+
+h2.horse-heading {
+  color:white;
+  display: flex;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0,0.4);
+  padding: 5px;
+}
+
+.category {
+  padding: 1px 4px;
+}
+
+.horse-info {
+  display: flex;
+align-items: center;
+font-weight: bold;
+}
+
+img.horse-info-avatar {
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.current-weather {
+  font-size: 20px;
+  margin: grey 2px solid;
+}
+
+.trix-editor, .trix-content {
+min-height: 220px !important;
+background-color: #fff;
+}
+
+.more-input {
+  float:right;
+  background-color: grey;
+  color: white;
+  padding: 4px;
+  margin-top: -20px;
+}
+
+.hide {
+  display: none;
+}
+
+.subform {
+  margin-left: 1rem;
+}
+
+.dash {
+  border: 2px grey dashed;
+  padding: 5px;
+}
+
+.panel {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color:white;
+}
+
+.panel-text {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+}
+
+.horse-side {
+   height:650px;
+   background-size:cover;
+   background-position:center;
+   color:white;
+}
+
+.horse-details {
+  margin-top: 2rem;
+}
+.horse-card {
+box-shadow: 10px 6px 5px -1px rgba(0,0,0,0.23);
+}
+
+.card {
+  border: 0;
+}
+
+a.remove_fields {
+  color: red;
+}
+
+.file {
+  margin: 5px;
+  display: inline;
+}
+
+.user-button {
+  margin: 0 5px;
+}
+
+.date-small {
+  font-size: 10px;
+}
+
+.weather-info {
+  font-size: 14px;
+  float: right;
+}
+
+td.day:hover {
+  background:rgb(208, 177, 247);
+}
+
+
+.select2-container .select2-selection--single {
+  height: 80px;
+  padding-top: 5px;
+}

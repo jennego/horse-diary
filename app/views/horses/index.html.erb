@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<h1>Horses</h1>
+<div class="row d-flex">
+
+<% @horses.each do |horse| %>
+
+
+<div class="col-md-4">
+  <%= link_to (horse_path(horse)) do %>
+  <div class="card" style="margin:10px">
+    <div class="row d-flex horse-card">
+  <div class="col-sm" style="background-image:url(<%= horse.avatar_url.url(:small)%>); height:200px; background-size:cover; padding:0" >
+ </div>
+ <div class="col-sm">
+   <div class="card-text">
+   <h2><%= horse.name %> </h2>
+ </div>
+ </div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+<% end %>
+
+</div>
+</div>

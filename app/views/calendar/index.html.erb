@@ -1,0 +1,25 @@
+<%= month_calendar events: @posts do |date, posts| %>
+  <%= date.day %> <br /> 
+
+  <%@reminders.each do |rem| %>
+    <%  if date.to_s  == rem.start_time.strftime('%Y-%m-%d') %>
+     <%= rem.date.strftime('%I:%M') %>
+     <%= rem.body %>
+     <%= rem.horse.name if rem.horse.present?%> <br>
+    <% end %>
+  <% end %>
+
+  <% posts.each do |post| %>
+  <%= link_to post_path(post) do %>
+    <div style="background-image: url(<%=post.horse.avatar_url.url(:small)%>) ;padding:2px;margin-bottom:5px; background-size:cover; background-position: center">
+        <div class="horse-info" style="background:rgba(0, 0, 0, 0.4);color:white">
+        <%= post.horse.name %>
+      </div>
+      <% post.categories.each do |c| %>
+      <div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %> </div>
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
+
+<% end %>

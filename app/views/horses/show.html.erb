@@ -1,0 +1,60 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-3 horse-side" style="background-image:url(<%=@horse.avatar_url.url%>)">
+  <h2 class="horse-heading"> <%= @horse.name %> </h2>
+
+<div class="horse-internal-links">
+  <%= link_to 'Recent Posts', post_by_horse_path %> <br>
+  <%= link_to "Reminders for #{@horse.name}", reminders_by_horse_path %>
+</div>
+<%= link_to 'edit', edit_horse_path %>
+<%= link_to 'delete', horse_path %>
+
+Archive this horse
+
+</div>
+
+
+<div class="col-md">
+
+
+
+<div class="horse-details">
+  <%if @horse.full_name?%> <strong> Full Name: </strong> <%= @horse&.full_name %> <br> <%end%>
+  <%if @horse.reg_name?%> <strong> Reg Name: </strong> <%= @horse&.reg_name %> <br> <%end%>
+  <%if @horse.show_name?%> <strong> Show Name: </strong> <%= @horse&.show_name %> <br> <%end%>
+
+  <%if @horse.color.present?%> <strong> Colour: </strong> <%= @horse&.color %> </br> <% end %>
+  <%if @horse.breed.present?%> <strong> Breed: </strong> <%= @horse&.breed %> </br> <% end %>
+  <%if @horse.approx_age.present?%><strong> Age(approx) </strong> <%= Date.today.year - @horse&.approx_age %> <br> <% end%>
+  <%if @horse.age.present?%> <strong> Age </strong> <%= Date.today - @horse&.age %> / Birthday: <%= @horse&.age %> <br> <%end%>
+  <%if @horse.sex.present?%> <strong> Gender: </strong> <%= @horse&.sex %> </br> <% end %>
+
+
+
+
+<% if @horse.users.present?%>
+  Rider: <%= @horse.users.first.full_name %>
+  <% end %>
+
+
+
+</div>
+</div>
+
+<div class="col-md-5">
+<br> <%= render 'logs/form' %> <br>
+
+<div class="logs-list">
+  <div class="row log-row">
+  <% @logs.each do |log| %>
+    <%= render '/logs/log', log: log %>
+  <% end %>
+</div>
+</div>
+
+
+</div>
+
+</div>
+</div>

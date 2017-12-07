@@ -10,5 +10,28 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require trix
+//= require jquery3
+//= require jquery.Jcrop
+//= require select2
+//= require flatpickr
+//= require moment
+//= require popper
+//= require bootstrap-sprockets
+//= require cocoon
 //= require rails-ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $( "#dropdown" ).select2({
+    theme: "bootstrap"
+  });
+
+
+$('.reminders').on('mouseover', function(event) {
+
+})
+
+});

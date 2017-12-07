@@ -1,0 +1,13 @@
+class CreateHorseProfiles < ActiveRecord::Migration[5.1]
+  def change
+    create_table :horse_profiles do |t|
+      t.string :fullname
+      t.dates :birth
+      t.string :breed
+      t.float :height
+      t.references :horse_id
+
+      t.timestamps
+    end
+  end
+end

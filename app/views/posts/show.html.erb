@@ -1,0 +1,33 @@
+<h3> <%= @post.date.strftime('%B %d, %Y')%> </h3>
+<h3>  <%= @post.title %> </h3>
+
+  <div class="horse-info">
+    <%= link_to horse_path(@post.horse) do %>
+  <%= image_tag @post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if @post.horse.avatar_url.present?%>
+  <%= @post.horse.name %>
+  <% end %>
+</div>
+
+<% @post.categories.each do |c| %>
+<div class="btn btn-info category" style="background-color: <%=c.color%>"> <%= image_tag c.category_img, style: 'width:30px' %>
+<%= c.name %> </div><% end %>
+
+<br>
+ <%=raw @post.body %>
+
+ <h1>Immges</h1>
+ <div class="row">
+ <% @post.post_images.each do |img| %>
+ <div class="col-md">
+ <%= image_tag img.image_url.url(:medium), style: 'width:500px' if img.image_url.present? %>
+</div>
+ <% end %>
+</div>
+
+<div>
+<%= link_to 'edit', edit_post_path, class:"btn btn-warning" %>
+<%= link_to 'delete', post_path(@post),
+    data: {confirm: 'Are you sure?'},
+    method: :delete, class:"btn btn-danger" %>
+
+</div>

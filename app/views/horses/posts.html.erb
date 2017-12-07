@@ -1,0 +1,5 @@
+<h1>Posts for <%=@horse.name %>  </h1>
+
+<% @posts.each do |post| %>
+<%= link_to post.title %> <br>
+<% end %>
