@@ -63,10 +63,10 @@ L: <%= @darksky["daily"]["data"][i]["temperatureLow"].round(0) %>°C
 
  <% i += 1%>
 </div>
-
  <% reminders.each do |rem| %>
  <div>
-   <%= rem.body %> <br>
+   <span class="badge badge-warning"> <%= rem.date.strftime('%l%p') %></span>
+   <%= rem.body %>  <%= rem.horse.name if rem.horse.present?%> <br>
  </div>
  <% end %>
 <% end %>
