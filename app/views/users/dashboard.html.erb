@@ -32,7 +32,7 @@
   </div>
   <div class="col-md">
     <div class="card dash">
-      <h2> Your Horses </h2>
+      <h2> My Horses </h2>
       <% @horses.each do |h| %>
       <% if h.users.first == current_user %>
        <%= link_to(horse_path(h)) do %>
