@@ -10,7 +10,7 @@ Category.create({name: "Ride", category_img: "ride_icon.PNG", color: "MediumPurp
 Category.create({name: "Lesson", category_img: "lesson_icon.PNG", color: "CornflowerBlue" })
 Category.create({name: "Flatwork", category_img: "flatwork_icon.PNG", color: " #f96143" })
 Category.create({name: "Jump", category_img: "flatwork_icon.PNG"})
-Category.create({name: "Groupwork", category_img: "groundwork_icon.PNG", color: "Peru" })
+Category.create({name: "Groundwork", category_img: "groundwork_icon.PNG", color: "Peru" })
 Category.create({name: "Trail Ride", category_img: "trail_ride_icon.PNG" , color: "LimeGreen"})
 
 

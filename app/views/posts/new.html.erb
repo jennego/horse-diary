@@ -4,6 +4,17 @@
 <h1>Add a New Session</h1>
 
 <%= render partial: 'form' , locals: {horses: @horses} %>
+<script>
+
+$(document).ready(function() {
+let currentdate = moment().format('YYYY-MM-DD')
+  $('.datepicker').flatpickr(
+      {enableTime: true,
+      defaultDate: currentdate // figure out how to make this for new only
+    }
+  );
+})
+</script>
 
 </div>
 </div>

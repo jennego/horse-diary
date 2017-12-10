@@ -3,5 +3,18 @@
 <h1>Edit Session</h1>
 
 <%= render 'form' %>
+
+<script>
+
+$(document).ready(function() {
+let currentdate = moment().format('YYYY-MM-DD')
+  $('.datepicker').flatpickr(
+      {enableTime: true
+    }
+  );
+})
+</script>
+
+
 </div>
 </div>
