@@ -1,6 +1,5 @@
 class HorsesController < ApplicationController
 before_action :authenticate_user!
-before_action :define_reminders
 
     def new
       @horse = Horse.new
@@ -52,6 +51,8 @@ before_action :define_reminders
     end
 
     def destroy
+      find_horse
+      @horse.destroy
     end
 
     def posts

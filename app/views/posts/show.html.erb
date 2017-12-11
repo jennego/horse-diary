@@ -6,9 +6,11 @@
 <h3>  <%= @post.title %> </h3>
 
   <div class="horse-info">
+    <% if @post.horse %>
     <%= link_to horse_path(@post.horse) do %>
   <%= image_tag @post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if @post.horse.avatar_url.present?%>
   <%= @post.horse.name %>
+  <% end %>
   <% end %>
 </div>
 <div class="body-content">

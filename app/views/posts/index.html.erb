@@ -13,8 +13,10 @@ Filter by: [select]
   <h4> <%= post.title %> </h4>
   <% end %>
   <div class="horse-info">
-  <%= image_tag post.horse.avatar_url.url(:thumb), class:"horse-info-avatar"  if post.horse.avatar_url.present?%>
+    <% if post.horse.present? %>
+  <%= image_tag post.horse.avatar_url.url(:thumb), class:"horse-info-avatar" %>
   <%= post.horse.name %>
+  <% end %>
 </div>
       <div class="card-block ml-auto">
       <% post.categories.each do |c| %>

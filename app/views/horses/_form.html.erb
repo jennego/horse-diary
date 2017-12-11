@@ -7,7 +7,7 @@
 <%= t.input :show_name %>
 <%= t.input :reg_name %>
 </div>
-<%= t.input :approx_age %>
+<%= t.input :approx_age, label: "Approx birth year" %>
 <div class="horse-year-link more-input"> Show exact birth date </div>
 <div class="horse-year subform hide">
 <%= t.input :age, as: :string, input_html: { class:"datepicker" } %>

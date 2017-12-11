@@ -1,6 +1,5 @@
 class WeatherController < ApplicationController
   before_action :authenticate_user!
-  before_action :define_reminders
 
 
   def index

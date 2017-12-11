@@ -1,10 +1,10 @@
 class Horse < ApplicationRecord
   # belongs_to :user
-  has_many :posts
-  has_many :reminders
-  has_many :too_many_horses, dependent: :nullify
+  has_many :posts, dependent: :destroy
+  has_many :reminders, dependent: :destroy
+  has_many :too_many_horses, dependent: :destroy
   has_many :users, through: :too_many_horses
-  has_many :logs 
+  has_many :logs, dependent: :destroy
 
   mount_uploader :avatar_url, AvatarUploader
 
