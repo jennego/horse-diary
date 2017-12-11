@@ -9,7 +9,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new reminder_params
     @reminder.user = current_user
    if  @reminder.save
-      RemindersMailer.remind_user(@reminder).deliver
+      RemindersMailer.remind_user(@reminder).deliver_now
       redirect_to reminders_path
    end
   end
