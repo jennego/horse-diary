@@ -6,9 +6,11 @@
       <div class="card-block">
       <h3> Reminders  <i class="fa fa-bell" aria-hidden="true"></i>
 </h3>
+ <% if @reminders.present? %>
       <% @reminders.each do |rem| %>
       <span class="badge badge-info"><%= rem.date.strftime('%b %d') %> </span>
      <%= rem.body %> <%= rem.horse.name if rem.horse.present?%>  <span class="badge badge-warning"> <%= rem.date.strftime('%l%p') %></span> <br>
+      <% end %>
       <% end %>
     </div>
   </div>
