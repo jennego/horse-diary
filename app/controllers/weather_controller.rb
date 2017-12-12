@@ -1,4 +1,5 @@
 class WeatherController < ApplicationController
+  before_action :define_reminders
   before_action :authenticate_user!
 
 

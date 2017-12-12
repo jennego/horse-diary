@@ -2,13 +2,6 @@
 <%= month_calendar events: @posts do |date, posts| %>
   <%= date.day %> <br />
 
-  <%@reminders.each do |rem| %>
-    <%  if date.to_s  == rem.start_time.strftime('%Y-%m-%d') %>
-    <span class="badge badge-warning">  <%= rem.date.strftime('%I:%M') %> </span>
-<%= rem.body %>
-     <%= rem.horse.name if rem.horse.present?%> <br>
-    <% end %>
-  <% end %>
 
   <% posts.each do |post| %>
   <%= link_to post_path(post) do %>
