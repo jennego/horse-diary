@@ -80,6 +80,8 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  Rails.application.routes.default_url_options[:host] = 'http://horsey-diary.herokuapp.com/'
+
 
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
