@@ -1,24 +1,17 @@
-# README
+# Horsee App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web app for riders to manage their rides, training sessions and horses. Features weather, calandar and posts.
+www.horsey-diary.herokuapp.com 🐴
 
-Things you may want to cover:
+## Specs
+- Ruby 2.4.1
+- Ruby on Rails 5
+- PostgresSQL
 
-* Ruby version
+## Also Using
+- Dark Sky API
+- Select2
+- Bookstrap 4
+- Flatpickr
+- jQuery
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
