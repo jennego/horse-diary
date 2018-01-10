@@ -3,6 +3,8 @@ class Reminder < ApplicationRecord
   belongs_to :horse, optional:true
   belongs_to :user
 
+  validates :date, presence: true
+
   def start_time
     if self.date.present?
     self.date
