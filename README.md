@@ -6,7 +6,7 @@ www.horsey-diary.herokuapp.com 🐴 .
 ## Specs
 - Ruby 2.4.1
 - Ruby on Rails 5
-- PostgresSQL
+- PostgreSQL
 
 ## Also Using
 - Dark Sky API
