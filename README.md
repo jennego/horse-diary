@@ -10,6 +10,7 @@ www.horsey-diary.herokuapp.com 🐴 .
 
 ## Also Using
 - Dark Sky API
+- Trix Editor
 - Select2
 - Bookstrap 4
 - Flatpickr
