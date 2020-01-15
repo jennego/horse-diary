@@ -1,7 +1,7 @@
 # Horsee App
 
 Web app for riders to manage their rides, training sessions and horses. Features weather, calendar, reminders (email and in-app) and posts.
-www.horsey-diary.herokuapp.com 🐴 . 
+https://horsey-diary.herokuapp.com/ 🐴 . 
  
 ## Specs
 - Ruby 2.4.1
