@@ -310,7 +310,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (3.0.0)
-    puma (3.10.0)
+    puma (3.12.2)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -465,7 +465,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pry
   pry-rails
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.4)
   rmagick
   rspec-rails (~> 3.6)
